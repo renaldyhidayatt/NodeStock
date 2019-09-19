@@ -21,5 +21,9 @@ app.get('/', function (req, res) {
     });
 });
 
+app.get('/about.html', function (req, res) {
+    res.render('about');
+});
+
 app.use(express.static(path.join(__dirname + '/public')));
 app.listen(PORT, () => console.log(`SERVER Listening on Port ` + PORT));
