@@ -1,2 +1,38 @@
-<h1>This Oke my Handlbars Homepage</h1>
-<p>{{ stock }}</p>
+<br>
+{{posted_stuff}}
+<style>
+    .jumbotron { 
+    padding: 30px; /* fills out the jumbotron */
+    background-color: #111;
+    }
+    .container {
+    width: 1170px; /* specify a width */
+    margin: 0 auto;  /* centers the container */
+    padding: 0 15px; /* adds some padding to the left and right*/
+    }
+    .jumbotron .container { 
+    max-width: 100%; /* allows the jumbotron to adjust on smaller widths */
+    background-color: #222;
+    }
+    .jumbotron h1 { 
+    text-align: center; /* centers the heading */
+    color: #DDD;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    }
+</style>
+<div class="container">
+    <h1 class="text-4xl text-blue-500">{{ stock.companyName }} ({{ stock.symbol }})</h1>
+    <br>
+    <strong class="normal-case text-blue-500">LastPrice : </strong><strong class="normal-case text-blue-500">{{ stock.latestPrice }}</strong><br>
+    <strong class="normal-case text-blue-500">Previous Close : </strong><strong class="normal-case text-blue-500">$ {{ stock.previousClose }}</strong><br>
+    <strong class="normal-case text-blue-500">Percent Change : </strong><strong class="normal-case text-blue-500">{{ stock.changePercent }}</strong><br>
+    <strong class="normal-case text-blue-500">Market Cap : </strong><strong class="normal-case text-blue-500">$ {{ stock.marketCap }}</strong><br>
+    <strong class="normal-case text-blue-500">YTD Change :</strong><strong class="normal-case text-blue-500">{{ stock.ytdChange }}%</strong><br>
+    <strong class="normal-case text-blue-500">52Wk Hight :</strong><strong class="normal-case text-blue-500">{{ stock.week52High }}</strong><br>
+    <strong class="normal-case text-blue-500">52Wk Low :</strong><strong class="normal-case text-blue-500">{{ stock.week52Low }}</strong><br>
+</div>
+ <!-- {{#each stock}}
+    {{@key}} | {{this}}<br/>
+ {{/each}} -->
